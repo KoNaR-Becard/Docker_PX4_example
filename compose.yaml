@@ -1,0 +1,45 @@
+services:
+  px4_sim:
+    container_name: px4_sim_ros
+    network_mode: host
+    image: px4_sim_ros
+
+    privileged: true
+    tty: true
+    build:
+      dockerfile: Dockerfile
+      context: .
+    stop_signal: SIGINT
+    stop_grace_period: 30m
+    runtime: nvidia
+    env_file:
+      - env
+    environment:
+      - ROS_DOMAIN_ID=0
+    volumes:
+      - ./entrypoint.sh:/entrypoint.sh:rwx
+      - /sys:/sys
+      - /etc/udev:/etc/udev
+      - /run/udev:/run/udev
+      - /run/dbus/:/run/dbus
+      - /dev:/dev
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            # device_ids: ['1']
+            count: all
+            capabilities: [gpu]
+
+    devices:
+      - "/dev/dri/:/dev/dri/"
+      - /dev/snd:/dev/snd
+      # - "/dev/kfd:/dev/kfd"
+
+    group_add:
+      - video
+      - dialout
+      - 1001
+      # - 993
