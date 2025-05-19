@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile
       context: .
     stop_signal: SIGINT
-    stop_grace_period: 30m
+    # stop_grace_period: 30m
     runtime: nvidia
     env_file:
       - env
@@ -24,6 +24,7 @@ services:
       - /run/dbus/:/run/dbus
       - /dev:/dev
 
+# need for Nvidia gpu:
     deploy:
       resources:
         reservations:
@@ -36,6 +37,7 @@ services:
     devices:
       - "/dev/dri/:/dev/dri/"
       - /dev/snd:/dev/snd
+      # need if you have AMD gpu:
       # - "/dev/kfd:/dev/kfd"
 
     group_add:

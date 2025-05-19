@@ -16,6 +16,26 @@ WORKDIR /app/PX4-Autopilot
 
 RUN make px4_sitl
 
+WORKDIR /app
+
+RUN git clone -b v2.4.3 https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
+
+WORKDIR /app/Micro-XRCE-DDS-Agent
+
+RUN mkdir build
+
+WORKDIR /app/Micro-XRCE-DDS-Agent/build
+
+RUN cmake ..
+
+RUN make
+
+RUN make install
+
+RUN ldconfig /usr/local/lib
+
+WORKDIR /app/PX4-Autopilot
+
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
