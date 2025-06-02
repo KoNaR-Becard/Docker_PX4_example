@@ -30,18 +30,14 @@ services:
         reservations:
           devices:
           - driver: nvidia
-            # device_ids: ['1']
             count: all
             capabilities: [gpu]
 
     devices:
       - "/dev/dri/:/dev/dri/"
       - /dev/snd:/dev/snd
-      # need if you have AMD gpu:
-      # - "/dev/kfd:/dev/kfd"
 
     group_add:
       - video
       - dialout
       - 1001
-      # - 993
