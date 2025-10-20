@@ -1,10 +1,18 @@
 # PX4 Docker simulation example
 
+## Quickstart
+
 A simple Docker containter, based on althack/ros2:humble-cuda-gazebo image, to run PX4 simulation in Gazeboo Ignition.
 In order to run simulation type:
 
-docker compose build
+```bash
+./run.sh
+```
 
-and then
+## Running with PX4 autopilot
 
-docker comose up
+In second terminal run:
+
+```bash
+./run.sh pilot
+```
