@@ -22,6 +22,7 @@ services:
       - /run/udev:/run/udev
       - /run/dbus/:/run/dbus
       - /dev:/dev
+      - /tmp/.X11-unix/:/tmp/.X11-unix/
 
 
     devices:
