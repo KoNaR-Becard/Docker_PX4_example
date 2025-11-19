@@ -1,28 +1,50 @@
-<?xml version="1.0" ?>
-<robot name="dron_oficjalnie_poprawione" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <model name="dron_oficjalnie_poprawione">
 
-<xacro:include filename="$(find dron_oficjalnie_poprawione_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find dron_oficjalnie_poprawione_description)/urdf/dron_oficjalnie_poprawione.trans" />
-<xacro:include filename="$(find dron_oficjalnie_poprawione_description)/urdf/dron_oficjalnie_poprawione.gazebo" />
-<link name="base_link">
-  <inertial>
-    <origin xyz="0.016940274497733394 -0.0036556945075804387 0.007281821429650738" rpy="0 0 0"/>
-    <mass value="1.386789481833554"/>
-    <inertia ixx="0.004369" iyy="0.00877" izz="0.004546" ixy="8e-06" iyz="-0.0" ixz="1e-06"/>
-  </inertial>
-  <visual>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+    <link name="base_link">
 
-</robot>
+      <!-- Inertial -->
+      <inertial>
+        <mass>1.386789481833554</mass>
+        <pose>0.016940274497733394 -0.0036556945075804387 0.007281821429650738 0 0 0</pose>
+        <inertia>
+          <ixx>0.004369</ixx>
+          <iyy>0.00877</iyy>
+          <izz>0.004546</izz>
+          <ixy>8e-06</ixy>
+          <iyz>0.0</iyz>
+          <ixz>1e-06</ixz>
+        </inertia>
+      </inertial>
+
+      <!-- Visual -->
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>models:///meshes/base_link.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.75 0.75 1.0</ambient>
+          <diffuse>0.75 0.75 0.75 1.0</diffuse>
+        </material>
+      </visual>
+
+      <!-- Collision -->
+      <collision name="base_link_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>package://dron_oficjalnie_poprawione_description/meshes/base_link.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+
+    </link>
+
+  </model>
+</sdf>
