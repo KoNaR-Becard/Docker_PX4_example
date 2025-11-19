@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<sdf version='1.9'>
+<model name='becard'>
+
+  <!-- <xacro:include filename="model://becard_base/materials.xacro" /> -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.016940274497733394 -0.0036556945075804387 0.007281821429650738" rpy="0 0 0"/>
+      <mass value="1.386789481833554"/>
+      <inertia ixx="0.004369" iyy="0.00877" izz="0.004546" ixy="8e-06" iyz="-0.0" ixz="1e-06"/>
+    </inertial>
+    <visual name="base_link_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://becard_base/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision name="base_link_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://becard_base/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+</model>
+</sdf>

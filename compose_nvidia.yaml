@@ -24,6 +24,9 @@ services:
       - /run/dbus/:/run/dbus
       - /dev:/dev
       - /tmp/.X11-unix/:/tmp/.X11-unix/
+      - ./worlds:/app/PX4-Autopilot/Tools/simulation/gz/worlds
+      - ./models:/app/PX4-Autopilot/Tools/simulation/gz/models
+      - ./airframes:/app/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes
 
 # need for Nvidia gpu:
     deploy:

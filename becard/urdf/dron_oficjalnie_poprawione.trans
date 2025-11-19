@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<robot name="dron_oficjalnie_poprawione" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+</robot>
