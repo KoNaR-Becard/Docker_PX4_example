@@ -2,7 +2,7 @@ services:
   px4_sim:
     container_name: px4_sim_ros
     network_mode: host
-    image: px4_sim_ros
+    image: ghcr.io/konar-becard/docker_px4_example:master
 
     privileged: true
     tty: true
