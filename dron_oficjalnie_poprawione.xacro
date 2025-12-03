@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="dron_oficjalnie_poprawione" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find dron_oficjalnie_poprawione_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find dron_oficjalnie_poprawione_description)/urdf/dron_oficjalnie_poprawione.trans" />
+<xacro:include filename="$(find dron_oficjalnie_poprawione_description)/urdf/dron_oficjalnie_poprawione.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.018587038207977344 0.010610111030428002 0.007278390231634997" rpy="0 0 0"/>
+    <mass value="3.577022367393264"/>
+    <inertia ixx="0.019819" iyy="0.026993" izz="0.020812" ixy="0.000408" iyz="0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wirnik_v4_1">
+  <inertial>
+    <origin xyz="-1.4120668239858691e-05 -0.004859469014487219 1.8854599379003467e-07" rpy="0 0 0"/>
+    <mass value="0.009618504415317076"/>
+    <inertia ixx="3.1e-05" iyy="3.1e-05" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.193675 -0.023408 -0.216695" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/wirnik_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.193675 -0.023408 -0.216695" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/wirnik_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wirnik_v4__1__1">
+  <inertial>
+    <origin xyz="-1.412066824005298e-05 -0.004859469014487229 2.509198814282243e-07" rpy="0 0 0"/>
+    <mass value="0.009618504415317076"/>
+    <inertia ixx="3.1e-05" iyy="3.1e-05" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.193675 -0.023408 0.202143" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/wirnik_v4__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.193675 -0.023408 0.202143" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/wirnik_v4__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wirnik_v4__2__1">
+  <inertial>
+    <origin xyz="-1.4183042127052792e-05 -0.004859469014487153 1.8854599373452352e-07" rpy="0 0 0"/>
+    <mass value="0.009618504415317076"/>
+    <inertia ixx="3.1e-05" iyy="3.1e-05" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.225163 -0.023408 -0.216695" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/wirnik_v4__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.225163 -0.023408 -0.216695" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/wirnik_v4__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wirnik_v4__3__1">
+  <inertial>
+    <origin xyz="-1.4183042127052792e-05 -0.004859469014487319 2.509198814282243e-07" rpy="0 0 0"/>
+    <mass value="0.009618504415317076"/>
+    <inertia ixx="3.1e-05" iyy="3.1e-05" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.225163 -0.023408 0.202143" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/wirnik_v4__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.225163 -0.023408 0.202143" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://dron_oficjalnie_poprawione_description/meshes/wirnik_v4__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="wirnik1" type="continuous">
+  <origin xyz="-0.193675 0.023408 0.216695" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wirnik_v4_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wirnik2" type="continuous">
+  <origin xyz="-0.193675 0.023408 -0.202143" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wirnik_v4__1__1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wirnik3" type="continuous">
+  <origin xyz="0.225163 0.023408 0.216695" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wirnik_v4__2__1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="wirnik4" type="continuous">
+  <origin xyz="0.225163 0.023408 -0.202143" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wirnik_v4__3__1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+</robot>
