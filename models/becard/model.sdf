@@ -57,7 +57,7 @@
     </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system"
       name="gz::sim::systems::MulticopterMotorModel">
-      <jointName>wirnik3</jointName>
+      <jointName>wirnik4</jointName>
       <linkName>wirnik_v4__3__1</linkName>
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
