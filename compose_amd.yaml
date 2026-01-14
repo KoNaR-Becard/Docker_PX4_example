@@ -10,7 +10,6 @@ services:
       dockerfile: Dockerfile
       context: .
     stop_signal: SIGINT
-    # stop_grace_period: 30m
     env_file:
       - env
     environment:
@@ -24,7 +23,6 @@ services:
       - /dev:/dev
       - /tmp/.X11-unix/:/tmp/.X11-unix/
 
-
     devices:
       - "/dev/dri/:/dev/dri/"
       - /dev/snd:/dev/snd
@@ -33,4 +31,3 @@ services:
     group_add:
       - video
       - dialout
-      - 1001
