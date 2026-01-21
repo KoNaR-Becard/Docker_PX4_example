@@ -1,0 +1,408 @@
+px4_sim_ros  | -- PX4_GIT_TAG: v1.17.0-alpha1-23-g65c5bd6906
+px4_sim_ros  | -- PX4 config file: /app/PX4-Autopilot/boards/px4/sitl/default.px4board
+px4_sim_ros  | -- PLATFORM posix
+px4_sim_ros  | -- ROMFSROOT px4fmu_common
+px4_sim_ros  | -- TESTING y
+px4_sim_ros  | -- ETHERNET y
+px4_sim_ros  | -- ROOT_PATH .
+px4_sim_ros  | -- PARAM_FILE /fs/mtd_params
+px4_sim_ros  | -- PX4 config: px4_sitl_default
+px4_sim_ros  | -- PX4 platform: posix
+px4_sim_ros  | -- PX4 lockstep: enabled
+px4_sim_ros  | -- cmake build type: RelWithDebInfo
+px4_sim_ros  | -- ccache enabled (export CCACHE_DISABLE=1 to disable)
+px4_sim_ros  | -- Looking for gz-transport13 -- found version 13.4.1
+px4_sim_ros  | -- Searching for dependencies of gz-transport13
+px4_sim_ros  | -- Config-file not installed for ZeroMQ -- checking for pkg-config
+px4_sim_ros  | -- Checking for module 'libzmq >= 4'
+px4_sim_ros  | --   Found libzmq , version 4.3.4
+px4_sim_ros  | -- Checking for module 'uuid'
+px4_sim_ros  | --   Found uuid, version 2.37.2
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Searching for dependencies of gz-utils2
+px4_sim_ros  | -- Searching for <gz-utils2> component [cli]
+px4_sim_ros  | -- Looking for gz-utils2-cli -- found version 2.2.1
+px4_sim_ros  | -- Searching for dependencies of gz-utils2-cli
+px4_sim_ros  | -- Looking for gz-msgs10 -- found version 10.3.2
+px4_sim_ros  | -- Searching for dependencies of gz-msgs10
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Searching for dependencies of gz-math7
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Checking for module 'tinyxml2'
+px4_sim_ros  | --   Found tinyxml2, version 9.0.0
+px4_sim_ros  | -- Looking for gz-transport13 -- found version 13.4.1
+px4_sim_ros  | -- Searching for dependencies of gz-transport13
+px4_sim_ros  | -- Config-file not installed for ZeroMQ -- checking for pkg-config
+px4_sim_ros  | -- Checking for module 'libzmq >= 4'
+px4_sim_ros  | --   Found libzmq , version 4.3.4
+px4_sim_ros  | -- Checking for module 'uuid'
+px4_sim_ros  | --   Found uuid, version 2.37.2
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Searching for dependencies of gz-utils2
+px4_sim_ros  | -- Searching for <gz-utils2> component [cli]
+px4_sim_ros  | -- Looking for gz-utils2-cli -- found version 2.2.1
+px4_sim_ros  | -- Searching for dependencies of gz-utils2-cli
+px4_sim_ros  | -- Looking for gz-msgs10 -- found version 10.3.2
+px4_sim_ros  | -- Searching for dependencies of gz-msgs10
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Searching for dependencies of gz-math7
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Checking for module 'tinyxml2'
+px4_sim_ros  | --   Found tinyxml2, version 9.0.0
+px4_sim_ros  | -- Looking for gz-sim8 -- found version 8.9.0
+px4_sim_ros  | -- Searching for dependencies of gz-sim8
+px4_sim_ros  | -- Looking for sdformat14 -- found version 14.8.0
+px4_sim_ros  | -- Searching for dependencies of sdformat14
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for gz-plugin2 -- found version 2.0.4
+px4_sim_ros  | -- Searching for dependencies of gz-plugin2
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Searching for <gz-plugin2> component [loader]
+px4_sim_ros  | -- Looking for gz-plugin2-loader -- found version 2.0.4
+px4_sim_ros  | -- Searching for dependencies of gz-plugin2-loader
+px4_sim_ros  | -- Searching for <gz-plugin2> component [register]
+px4_sim_ros  | -- Looking for gz-plugin2-register -- found version 2.0.4
+px4_sim_ros  | -- Searching for dependencies of gz-plugin2-register
+px4_sim_ros  | -- Looking for gz-transport13 -- found version 13.4.1
+px4_sim_ros  | -- Searching for dependencies of gz-transport13
+px4_sim_ros  | -- Config-file not installed for ZeroMQ -- checking for pkg-config
+px4_sim_ros  | -- Checking for module 'libzmq >= 4'
+px4_sim_ros  | --   Found libzmq , version 4.3.4
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for gz-msgs10 -- found version 10.3.2
+px4_sim_ros  | -- Searching for <gz-transport13> component [log]
+px4_sim_ros  | -- Looking for gz-transport13-log -- found version 13.4.1
+px4_sim_ros  | -- Searching for dependencies of gz-transport13-log
+px4_sim_ros  | -- Searching for <gz-transport13> component [parameters]
+px4_sim_ros  | -- Looking for gz-transport13-parameters -- found version 13.4.1
+px4_sim_ros  | -- Searching for dependencies of gz-transport13-parameters
+px4_sim_ros  | -- Looking for gz-msgs10 -- found version 10.3.2
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for dlfcn.h - found
+px4_sim_ros  | -- Looking for libdl - found
+px4_sim_ros  | -- Searching for <gz-common5> component [av]
+px4_sim_ros  | -- Looking for gz-common5-av -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5-av
+px4_sim_ros  | -- Checking for module 'libswscale'
+px4_sim_ros  | --   Found libswscale, version 5.9.100
+px4_sim_ros  | -- Checking for module 'libavdevice >= 56.4.100'
+px4_sim_ros  | --   Found libavdevice , version 58.13.100
+px4_sim_ros  | -- Checking for module 'libavformat'
+px4_sim_ros  | --   Found libavformat, version 58.76.100
+px4_sim_ros  | -- Checking for module 'libavcodec'
+px4_sim_ros  | --   Found libavcodec, version 58.134.100
+px4_sim_ros  | -- Checking for module 'libavutil'
+px4_sim_ros  | --   Found libavutil, version 56.70.100
+px4_sim_ros  | -- Searching for <gz-common5> component [events]
+px4_sim_ros  | -- Looking for gz-common5-events -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5-events
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Searching for <gz-common5> component [graphics]
+px4_sim_ros  | -- Looking for gz-common5-graphics -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5-graphics
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Searching for <gz-common5> component [io]
+px4_sim_ros  | -- Looking for gz-common5-io -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5-io
+px4_sim_ros  | -- Searching for <gz-common5> component [profiler]
+px4_sim_ros  | -- Looking for gz-common5-profiler -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5-profiler
+px4_sim_ros  | -- Looking for gz-fuel_tools9 -- found version 9.1.1
+px4_sim_ros  | -- Searching for dependencies of gz-fuel_tools9
+px4_sim_ros  | -- Checking for module 'jsoncpp'
+px4_sim_ros  | --   Found jsoncpp, version 1.9.5
+px4_sim_ros  | -- Checking for module 'libzip'
+px4_sim_ros  | --   Found libzip, version 1.7.3
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for dlfcn.h - found
+px4_sim_ros  | -- Looking for libdl - found
+px4_sim_ros  | -- Searching for <gz-common5> component [testing]
+px4_sim_ros  | -- Looking for gz-common5-testing -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5-testing
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Looking for gz-msgs10 -- found version 10.3.2
+px4_sim_ros  | -- Looking for gz-gui8 -- found version 8.4.0
+px4_sim_ros  | -- Searching for dependencies of gz-gui8
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Looking for gz-plugin2 -- found version 2.0.4
+px4_sim_ros  | -- Looking for gz-transport13 -- found version 13.4.1
+px4_sim_ros  | -- Looking for gz-rendering8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-rendering8
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Searching for dependencies of gz-math7
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Searching for <gz-math7> component [eigen3]
+px4_sim_ros  | -- Looking for gz-math7-eigen3 -- found version 7.5.1
+px4_sim_ros  | -- Searching for dependencies of gz-math7-eigen3
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for dlfcn.h - found
+px4_sim_ros  | -- Looking for libdl - found
+px4_sim_ros  | -- Searching for <gz-common5> component [graphics]
+px4_sim_ros  | -- Searching for <gz-common5> component [events]
+px4_sim_ros  | -- Searching for <gz-common5> component [geospatial]
+px4_sim_ros  | -- Looking for gz-common5-geospatial -- found version 5.7.1
+px4_sim_ros  | -- Searching for dependencies of gz-common5-geospatial
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Looking for gz-plugin2 -- found version 2.0.4
+px4_sim_ros  | -- Searching for dependencies of gz-plugin2
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Searching for <gz-plugin2> component [all]
+px4_sim_ros  | -- Looking for all libraries of gz-plugin2 -- found version 2.0.4
+px4_sim_ros  | -- Looking for gz-plugin2 -- found version 2.0.4
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for gz-msgs10 -- found version 10.3.2
+px4_sim_ros  | -- Looking for gz-physics7 -- found version 7.5.0
+px4_sim_ros  | -- Searching for dependencies of gz-physics7
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Looking for gz-plugin2 -- found version 2.0.4
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Searching for <gz-physics7> component [heightmap]
+px4_sim_ros  | -- Looking for gz-physics7-heightmap -- found version 7.5.0
+px4_sim_ros  | -- Searching for dependencies of gz-physics7-heightmap
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Searching for <gz-physics7> component [mesh]
+px4_sim_ros  | -- Looking for gz-physics7-mesh -- found version 7.5.0
+px4_sim_ros  | -- Searching for dependencies of gz-physics7-mesh
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Searching for <gz-physics7> component [sdf]
+px4_sim_ros  | -- Looking for gz-physics7-sdf -- found version 7.5.0
+px4_sim_ros  | -- Searching for dependencies of gz-physics7-sdf
+px4_sim_ros  | -- Looking for sdformat14 -- found version 14.8.0
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Looking for gz-transport13 -- found version 13.4.1
+px4_sim_ros  | -- Looking for gz-rendering8 -- found version 8.2.2
+px4_sim_ros  | -- Looking for gz-msgs10 -- found version 10.3.2
+px4_sim_ros  | -- Looking for sdformat14 -- found version 14.8.0
+px4_sim_ros  | -- Searching for <gz-sensors8> component [air_pressure]
+px4_sim_ros  | -- Looking for gz-sensors8-air_pressure -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-air_pressure
+px4_sim_ros  | -- Searching for <gz-sensors8> component [air_speed]
+px4_sim_ros  | -- Looking for gz-sensors8-air_speed -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-air_speed
+px4_sim_ros  | -- Searching for <gz-sensors8> component [altimeter]
+px4_sim_ros  | -- Looking for gz-sensors8-altimeter -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-altimeter
+px4_sim_ros  | -- Searching for <gz-sensors8> component [imu]
+px4_sim_ros  | -- Looking for gz-sensors8-imu -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-imu
+px4_sim_ros  | -- Searching for <gz-sensors8> component [force_torque]
+px4_sim_ros  | -- Looking for gz-sensors8-force_torque -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-force_torque
+px4_sim_ros  | -- Searching for <gz-sensors8> component [logical_camera]
+px4_sim_ros  | -- Looking for gz-sensors8-logical_camera -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-logical_camera
+px4_sim_ros  | -- Searching for <gz-sensors8> component [magnetometer]
+px4_sim_ros  | -- Looking for gz-sensors8-magnetometer -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-magnetometer
+px4_sim_ros  | -- Searching for <gz-sensors8> component [navsat]
+px4_sim_ros  | -- Looking for gz-sensors8-navsat -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-navsat
+px4_sim_ros  | -- Searching for <gz-sensors8> component [dvl]
+px4_sim_ros  | -- Looking for gz-sensors8-dvl -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-dvl
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Looking for gz-common5 -- found version 5.7.1
+px4_sim_ros  | -- Looking for gz-transport13 -- found version 13.4.1
+px4_sim_ros  | -- Looking for gz-rendering8 -- found version 8.2.2
+px4_sim_ros  | -- Looking for gz-msgs10 -- found version 10.3.2
+px4_sim_ros  | -- Looking for sdformat14 -- found version 14.8.0
+px4_sim_ros  | -- Searching for <gz-sensors8> component [rendering]
+px4_sim_ros  | -- Looking for gz-sensors8-rendering -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-rendering
+px4_sim_ros  | -- Searching for <gz-sensors8> component [rendering]
+px4_sim_ros  | -- Searching for <gz-sensors8> component [lidar]
+px4_sim_ros  | -- Looking for gz-sensors8-lidar -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-lidar
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for <gz-sensors8> component [gpu_lidar]
+px4_sim_ros  | -- Looking for gz-sensors8-gpu_lidar -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-gpu_lidar
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for <gz-sensors8> component [camera]
+px4_sim_ros  | -- Looking for gz-sensors8-camera -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-camera
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for <gz-sensors8> component [boundingbox_camera]
+px4_sim_ros  | -- Looking for gz-sensors8-boundingbox_camera -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-boundingbox_camera
+px4_sim_ros  | -- Searching for <gz-sensors8> component [segmentation_camera]
+px4_sim_ros  | -- Looking for gz-sensors8-segmentation_camera -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-segmentation_camera
+px4_sim_ros  | -- Searching for <gz-sensors8> component [depth_camera]
+px4_sim_ros  | -- Looking for gz-sensors8-depth_camera -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-depth_camera
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for <gz-sensors8> component [rgbd_camera]
+px4_sim_ros  | -- Looking for gz-sensors8-rgbd_camera -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-rgbd_camera
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for <gz-sensors8> component [thermal_camera]
+px4_sim_ros  | -- Looking for gz-sensors8-thermal_camera -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-thermal_camera
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Searching for <gz-sensors8> component [wide_angle_camera]
+px4_sim_ros  | -- Looking for gz-sensors8-wide_angle_camera -- found version 8.2.2
+px4_sim_ros  | -- Searching for dependencies of gz-sensors8-wide_angle_camera
+px4_sim_ros  | -- Looking for gz-rendering8 -- found version 8.2.2
+px4_sim_ros  | -- Looking for gz-math7 -- found version 7.5.1
+px4_sim_ros  | -- Looking for gz-utils2 -- found version 2.2.1
+px4_sim_ros  | -- Looking for gz-sensors8 -- found version 8.2.2
+px4_sim_ros  | -- Looking for gz-plugin2 -- found version 2.0.4
+px4_sim_ros  | -- Found OpenCV: /usr (found version "4.5.4") 
+px4_sim_ros  | -- Found OpenCV: /usr (found version "4.5.4") found components: core imgproc 
+px4_sim_ros  | CMake Warning at src/modules/simulation/simulator_sih/CMakeLists.txt:95 (message):
+px4_sim_ros  |   sihsim missing model: airplane (), airframe: , SYS_AUTOSTART:
+px4_sim_ros  | 
+px4_sim_ros  | 
+px4_sim_ros  | CMake Warning at src/modules/simulation/simulator_sih/CMakeLists.txt:95 (message):
+px4_sim_ros  |   sihsim missing model: quadx (), airframe: , SYS_AUTOSTART:
+px4_sim_ros  | 
+px4_sim_ros  | 
+px4_sim_ros  | CMake Warning at src/modules/simulation/simulator_sih/CMakeLists.txt:95 (message):
+px4_sim_ros  |   sihsim missing model: xvert (), airframe: , SYS_AUTOSTART:
+px4_sim_ros  | 
+px4_sim_ros  | 
+px4_sim_ros  | CMake Warning at src/modules/simulation/simulator_sih/CMakeLists.txt:95 (message):
+px4_sim_ros  |   sihsim missing model: standard_vtol (), airframe: , SYS_AUTOSTART:
+px4_sim_ros  | 
+px4_sim_ros  | 
+px4_sim_ros  | CMake Warning at src/modules/simulation/simulator_sih/CMakeLists.txt:95 (message):
+px4_sim_ros  |   sihsim missing model: hex (), airframe: , SYS_AUTOSTART:
+px4_sim_ros  | 
+px4_sim_ros  | 
+px4_sim_ros  | CMake Warning at src/modules/simulation/simulator_sih/CMakeLists.txt:95 (message):
+px4_sim_ros  |   sihsim missing model: rover_ackermann (), airframe: , SYS_AUTOSTART:
+px4_sim_ros  | 
+px4_sim_ros  | 
+px4_sim_ros  | -- ROMFS: ROMFS/px4fmu_common
+px4_sim_ros  | Architecture:  amd64
+px4_sim_ros  | ==> CPACK_INSTALL_PREFIX = @DEB_INSTALL_PREFIX@
+px4_sim_ros  | -- Configuring done
+px4_sim_ros  | -- Generating done
+px4_sim_ros  | -- Build files have been written to: /app/PX4-Autopilot/build/px4_sitl_default
+[3/26] Performing download step (git clone) for 'OpticalFlow'
+px4_sim_ros  | -- Avoiding repeated git clone, stamp file is up to date: '/app/PX4-Autopilot/build/px4_sitl_default/OpticalFlow/src/OpticalFlow-stamp/OpticalFlow-gitclone-lastrun.txt'
+[7/26] Performing configure step for 'OpticalFlow'
+px4_sim_ros  | CMake Deprecation Warning at external/klt_feature_tracker/CMakeLists.txt:1 (cmake_minimum_required):
+px4_sim_ros  |   Compatibility with CMake < 2.8.12 will be removed from a future version of
+px4_sim_ros  |   CMake.
+px4_sim_ros  | 
+px4_sim_ros  |   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+px4_sim_ros  |   CMake that the project does not need compatibility with older versions.
+px4_sim_ros  | 
+px4_sim_ros  | 
+px4_sim_ros  | -- Building klt_feature_tracker without catkin
+px4_sim_ros  | -- Building OpticalFlow with OpenCV
+px4_sim_ros  | -- Configuring done
+px4_sim_ros  | -- Generating done
+px4_sim_ros  | -- Build files have been written to: /app/PX4-Autopilot/build/px4_sitl_default/OpticalFlow/src/OpticalFlow-build
+[8/26] Performing build step for 'OpticalFlow'
+px4_sim_ros  | ninja: no work to do.
+[10/26] Performing install step for 'OpticalFlow'
+px4_sim_ros  | [0/1] Install the project...
+px4_sim_ros  | -- Install configuration: ""
+px4_sim_ros  | -- Installing: /usr/local/lib/libOpticalFlow.so
+px4_sim_ros  | -- Up-to-date: /usr/local/include
+px4_sim_ros  | -- Installing: /usr/local/include/trackFeatures.h
+px4_sim_ros  | -- Up-to-date: /usr/local/include
+px4_sim_ros  | -- Installing: /usr/local/include/px4flow.hpp
+px4_sim_ros  | -- Installing: /usr/local/include/optical_flow.hpp
+px4_sim_ros  | -- Installing: /usr/local/include/flow_opencv.hpp
+px4_sim_ros  | -- Installing: /usr/local/include/flow_px4.hpp
+px4_sim_ros  | -- Installing: /usr/local/FindOpticalFlow.cmake
+[25/26] cd /app/PX4-Autopilot/build/px4_sitl_default/src/modules/simulation/gz_bridge && /usr/bin/cmake -E env PX4_SIM_MODEL=gz_becard GZ_IP=127.0.0.1 /app/PX4-Autopilot/build/px4_sitl_default/bin/px4
+px4_sim_ros  | 
+px4_sim_ros  | ______  __   __    ___ 
+px4_sim_ros  | | ___ \ \ \ / /   /   |
+px4_sim_ros  | | |_/ /  \ V /   / /| |
+px4_sim_ros  | |  __/   /   \  / /_| |
+px4_sim_ros  | | |     / /^\ \ \___  |
+px4_sim_ros  | \_|     \/   \/     |_/
+px4_sim_ros  | 
+px4_sim_ros  | px4 starting.
+px4_sim_ros  | 
+px4_sim_ros  | INFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 0
+px4_sim_ros  | INFO  [init] found model autostart file as SYS_AUTOSTART=4001
+px4_sim_ros  | INFO  [param] selected parameter default file parameters.bson
+px4_sim_ros  | INFO  [param] selected parameter backup file parameters_backup.bson
+px4_sim_ros  |   SYS_AUTOCONFIG: curr: 0 -> new: 1
+px4_sim_ros  |   SYS_AUTOSTART: curr: 0 -> new: 4001
+px4_sim_ros  |   CAL_ACC0_ID: curr: 0 -> new: 1310988
+px4_sim_ros  |   CAL_GYRO0_ID: curr: 0 -> new: 1310988
+px4_sim_ros  |   CAL_ACC1_ID: curr: 0 -> new: 1310996
+px4_sim_ros  |   CAL_GYRO1_ID: curr: 0 -> new: 1310996
+px4_sim_ros  |   CAL_ACC2_ID: curr: 0 -> new: 1311004
+px4_sim_ros  |   CAL_GYRO2_ID: curr: 0 -> new: 1311004
+px4_sim_ros  |   CAL_MAG0_ID: curr: 0 -> new: 197388
+px4_sim_ros  |   CAL_MAG0_PRIO: curr: -1 -> new: 50
+px4_sim_ros  |   CAL_MAG1_ID: curr: 0 -> new: 197644
+px4_sim_ros  |   CAL_MAG1_PRIO: curr: -1 -> new: 50
+px4_sim_ros  |   SENS_BOARD_X_OFF: curr: 0.0000 -> new: 0.0000
+px4_sim_ros  |   SENS_DPRES_OFF: curr: 0.0000 -> new: 0.0010
+px4_sim_ros  | INFO  [dataman] data manager file './dataman' size is 1208528 bytes
+px4_sim_ros  | INFO  [init] Gazebo simulator 8.9.0
+px4_sim_ros  | INFO  [init] Starting gazebo with world: /app/PX4-Autopilot/Tools/simulation/gz/worlds/default.sdf
+px4_sim_ros  | INFO  [init] Starting gz gui
+px4_sim_ros  | INFO  [init] Gazebo world is ready
+px4_sim_ros  | INFO  [init] Spawning Gazebo model
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="becard_base"]/link[@name="base_link"]/sensor[@name="air_pressure_sensor"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/becard_base/model.sdf:L50]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="becard_base"]/link[@name="base_link"]/sensor[@name="magnetometer_sensor"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/becard_base/model.sdf:L64]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="becard_base"]/link[@name="base_link"]/sensor[@name="imu_sensor"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/becard_base/model.sdf:L90]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="becard_base"]/link[@name="base_link"]/sensor[@name="navsat_sensor"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/becard_base/model.sdf:L142]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="becard_base"]/link[@name="camera_link"]/sensor[@name="IMX214"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/becard_base/model.sdf:L316]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="becard_base"]/link[@name="camera_link"]/sensor[@name="StereoOV7251"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/becard_base/model.sdf:L334]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | [Err] [SystemLoader.cc:92] Failed to load system plugin [MotorFailurePlugin] : Could not find shared library.
+px4_sim_ros  | Warning [Inertia.cpp:233] [Inertia::verifyMoment] Invalid entry for (2,2): 0. Value should be positive and greater than zero.
+px4_sim_ros  | Warning [Inertia.cpp:149] [Inertia::setMoment] Passing in an invalid moment of inertia matrix. Results might not by physically accurate or meaningful.
+px4_sim_ros  | Warning [Inertia.cpp:233] [Inertia::verifyMoment] Invalid entry for (2,2): 0. Value should be positive and greater than zero.
+px4_sim_ros  | Warning [Inertia.cpp:149] [Inertia::setMoment] Passing in an invalid moment of inertia matrix. Results might not by physically accurate or meaningful.
+px4_sim_ros  | Warning [Inertia.cpp:233] [Inertia::verifyMoment] Invalid entry for (2,2): 0. Value should be positive and greater than zero.
+px4_sim_ros  | Warning [Inertia.cpp:149] [Inertia::setMoment] Passing in an invalid moment of inertia matrix. Results might not by physically accurate or meaningful.
+px4_sim_ros  | Warning [Inertia.cpp:233] [Inertia::verifyMoment] Invalid entry for (2,2): 0. Value should be positive and greater than zero.
+px4_sim_ros  | Warning [Inertia.cpp:149] [Inertia::setMoment] Passing in an invalid moment of inertia matrix. Results might not by physically accurate or meaningful.
+px4_sim_ros  | [Err] [SDFFeatures.cc:1185] Asked to construct a joint of sdf::JointType [2], but that is not supported yet. Creating a FIXED joint instead
+px4_sim_ros  | [Err] [SDFFeatures.cc:1185] Asked to construct a joint of sdf::JointType [2], but that is not supported yet. Creating a FIXED joint instead
+px4_sim_ros  | [Err] [SDFFeatures.cc:1185] Asked to construct a joint of sdf::JointType [2], but that is not supported yet. Creating a FIXED joint instead
+px4_sim_ros  | [Err] [SDFFeatures.cc:1185] Asked to construct a joint of sdf::JointType [2], but that is not supported yet. Creating a FIXED joint instead
+px4_sim_ros  | libEGL warning: egl: failed to create dri2 screen
+px4_sim_ros  | libEGL warning: egl: failed to create dri2 screen
+px4_sim_ros  | INFO  [gz_bridge] world: default, model: becard_0
+px4_sim_ros  | INFO  [lockstep_scheduler] setting initial absolute time to 720000 us
+px4_sim_ros  | INFO  [commander] LED: open /dev/led0 failed (22)
+px4_sim_ros  | INFO  [tone_alarm] home set
+px4_sim_ros  | INFO  [uxrce_dds_client] init UDP agent IP:127.0.0.1, port:8888
+px4_sim_ros  | INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18570 remote port 14550
+px4_sim_ros  | INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540
+px4_sim_ros  | INFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14280 remote port 14030
+px4_sim_ros  | INFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13030 remote port 13280
+px4_sim_ros  | INFO  [logger] logger started (mode=all)
+px4_sim_ros  | INFO  [logger] Start file log (type: full)
+px4_sim_ros  | INFO  [logger] [logger] ./log/2025-12-10/18_18_46.ulg
+px4_sim_ros  | INFO  [logger] Opened full log file: ./log/2025-12-10/18_18_46.ulg
+px4_sim_ros  | INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+px4_sim_ros  | INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+px4_sim_ros  | INFO  [px4] Startup script returned successfully
+px4_sim_ros  | pxh> WARN  [health_and_arming_checks] Preflight Fail: Attitude failure (roll)
+px4_sim_ros  | WARN  [health_and_arming_checks] Preflight Fail: No connection to the GCS
+px4_sim_ros  | WARN  [health_and_arming_checks] Preflight Fail: heading estimate not stable
+px4_sim_ros  | WARN  [health_and_arming_checks] Preflight Fail: Attitude failure (roll)
+px4_sim_ros  | WARN  [health_and_arming_checks] Preflight Fail: No connection to the GCS

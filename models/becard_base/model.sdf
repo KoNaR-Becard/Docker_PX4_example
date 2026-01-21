@@ -6,7 +6,21 @@
     <self_collide>false</self_collide>
     <static>false</static>
     <link name="base_link">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
       <pose>0 0 0 -1.57 0 0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
+        <mass>0.0</mass>
+        <inertia>
+          <ixx>0.0</ixx>
+          <iyy>0.0</iyy>
+          <izz>0.0</izz>
+          <ixy>0.0</ixy>
+          <iyz>0.0</iyz>
+          <ixz>0.0</ixz>
+        </inertia>
+      </inertial>
       <sensor name="imu_sensor" type="imu">
         <gz_frame_id>base_link</gz_frame_id>
         <always_on>1</always_on>
@@ -111,18 +125,19 @@
     <link name="frame_link">
       <pose>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0.018587038207977344 0.010610111030428002 0.007278390231634997 0 0 0</pose>
-        <mass>3.577022367393264</mass>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
+        <mass>3.3577022367393264</mass>
         <inertia>
           <ixx>0.019819</ixx>
           <iyy>0.026993</iyy>
           <izz>0.020812</izz>
-          <ixy>0.000408</ixy>
+          <ixy>0.0</ixy>
           <iyz>0.0</iyz>
-          <ixz>1e-06</ixz>
+          <ixz>0.0</ixz>
         </inertia>
       </inertial>
       <gravity>true</gravity>
+      <self_collide>false</self_collide>
       <velocity_decay />
 
       <visual name="base_link_visual">
@@ -166,19 +181,21 @@
 
     <!-- ================= ROTOR 1 ================= -->
     <link name="wirnik_v4_1">
-      <pose>0 0 0 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <pose>0.174 0.06 -0.174 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.009618504415317076</mass>
         <inertia>
           <ixx>3.1e-05</ixx>
           <iyy>3.1e-05</iyy>
-          <izz>0</izz>
+          <izz>2.649858234714004e-05</izz>
         </inertia>
       </inertial>
 
       <visual name="wirnik_v4_1_visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.0 -0.0 -0.0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://becard_base/meshes/wirnik_v4_1.stl</uri>
@@ -188,119 +205,167 @@
       </visual>
 
       <collision name="wirnik_v4_1_collision">
+        <pose>-0.0 0 0 0 0 0 </pose>
+        <geometry>
+          <box>
+            <size>0.2792307692307692 0.016923076923076923 0.0008461538461538462</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <!-- ================= ROTOR 2 ================= -->
+    <link name="wirnik_v4__1__1">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <pose>-0.174 0.06 0.174 0 0 0</pose>
+      <inertial>
         <pose>0 0 0 0 0 0</pose>
+        <mass>0.009618504415317076</mass>
+        <inertia>
+          <ixx>3.1e-05</ixx>
+          <iyy>3.1e-05</iyy>
+          <izz>2.649858234714004e-05</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="wirnik_v4__1__1_visual">
+        <pose>-0.0 -0.0 -0.0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://becard_base/meshes/wirnik_v4_1.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
-      </collision>
-    </link>
-
-    <!-- ================= ROTOR 2 ================= -->
-    <link name="wirnik_v4__1__1">
-      <pose>0 0 0 0 0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>0.009618504415317076</mass>
-        <inertia>
-          <ixx>3.1e-05</ixx>
-          <iyy>3.1e-05</iyy>
-          <izz>0</izz>
-        </inertia>
-      </inertial>
-
-      <visual name="wirnik_v4__1__1_visual">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://becard_base/meshes/wirnik_v4__1__1.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
-        </geometry>
       </visual>
 
       <collision name="wirnik_v4__1__1_collision">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 0 0 </pose>
         <geometry>
-          <mesh>
-            <uri>model://becard_base/meshes/wirnik_v4__1__1.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
+          <box>
+            <size>0.2792307692307692 0.016923076923076923 0.0008461538461538462</size>
+          </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
       </collision>
     </link>
 
     <!-- ================= ROTOR 3 ================= -->
     <link name="wirnik_v4__2__1">
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0.174 0.06 0.174 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.009618504415317076</mass>
         <inertia>
           <ixx>3.1e-05</ixx>
           <iyy>3.1e-05</iyy>
-          <izz>0</izz>
+          <izz>2.649858234714004e-05</izz>
         </inertia>
       </inertial>
 
       <visual name="wirnik_v4__2__1_visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.0 -0.0 -0.0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://becard_base/meshes/wirnik_v4__2__1.stl</uri>
+            <uri>model://becard_base/meshes/wirnik_v4_1.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
 
       <collision name="wirnik_v4__2__1_collision">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 0 0 </pose>
         <geometry>
-          <mesh>
-            <uri>model://becard_base/meshes/wirnik_v4__2__1.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
+          <box>
+            <size>0.2792307692307692 0.016923076923076923 0.0008461538461538462</size>
+          </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
       </collision>
     </link>
 
     <!-- ================= ROTOR 4 ================= -->
     <link name="wirnik_v4__3__1">
-      <pose>0 0 0 0 0 0</pose>
+      <pose>-0.174 0.06 -0.174 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.009618504415317076</mass>
         <inertia>
           <ixx>3.1e-05</ixx>
           <iyy>3.1e-05</iyy>
-          <izz>0</izz>
+          <izz>2.649858234714004e-05</izz>
         </inertia>
       </inertial>
 
       <visual name="wirnik_v4__3__1_visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.0 -0.0 -0.0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://becard_base/meshes/wirnik_v4__3__1.stl</uri>
+            <uri>model://becard_base/meshes/wirnik_v4_1.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
 
       <collision name="wirnik_v4__3__1_collision">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 0 0 </pose>
         <geometry>
-          <mesh>
-            <uri>model://becard_base/meshes/wirnik_v4__3__1.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
+          <box>
+            <size>0.2792307692307692 0.016923076923076923 0.0008461538461538462</size>
+          </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
       </collision>
     </link>
     <!-- ================= CAMERA LINK ================= -->
     <link name="camera_link">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
       <inertial>
         <pose>0.00358 -0.03 .014 0 0 0</pose>
         <mass>0.061</mass>
@@ -371,18 +436,13 @@
       <gravity>true</gravity>
       <velocity_decay />
     </link>
-    <!-- <plugin filename="ignition-gazebo-sensors-system"
-    name="ignition::gazebo::systems::Sensors">
-      <render_engine>ogre2</render_engine>
-    </plugin> -->
 
     <!-- ================= JOINTS ================= -->
     <joint name="wirnik1" type="revolute">
       <parent>frame_link</parent>
       <child>wirnik_v4_1</child>
-      <pose>-0.193675 0.023408 0.216695 0 0 0</pose>
       <axis>
-        <xyz>0 -1 0</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -397,9 +457,8 @@
     <joint name="wirnik2" type="revolute">
       <parent>frame_link</parent>
       <child>wirnik_v4__1__1</child>
-      <pose>-0.193675 0.023408 -0.202143 0 0 0</pose>
       <axis>
-        <xyz>0 -1 0</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -414,9 +473,8 @@
     <joint name="wirnik3" type="revolute">
       <parent>frame_link</parent>
       <child>wirnik_v4__2__1</child>
-      <pose>0.225163 0.023408 0.216695 0 0 0</pose>
       <axis>
-        <xyz>0 -1 0</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -431,9 +489,8 @@
     <joint name="wirnik4" type="revolute">
       <parent>frame_link</parent>
       <child>wirnik_v4__3__1</child>
-      <pose>0.225163 0.023408 -0.202143 0 0 0</pose>
       <axis>
-        <xyz>0 -1 0</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>

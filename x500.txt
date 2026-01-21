@@ -1,0 +1,60 @@
+px4_sim_ros  | 
+px4_sim_ros  | ______  __   __    ___ 
+px4_sim_ros  | | ___ \ \ \ / /   /   |
+px4_sim_ros  | | |_/ /  \ V /   / /| |
+px4_sim_ros  | |  __/   /   \  / /_| |
+px4_sim_ros  | | |     / /^\ \ \___  |
+px4_sim_ros  | \_|     \/   \/     |_/
+px4_sim_ros  | 
+px4_sim_ros  | px4 starting.
+px4_sim_ros  | 
+px4_sim_ros  | INFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 0
+px4_sim_ros  | INFO  [init] found model autostart file as SYS_AUTOSTART=4001
+px4_sim_ros  | INFO  [param] selected parameter default file parameters.bson
+px4_sim_ros  | INFO  [param] selected parameter backup file parameters_backup.bson
+px4_sim_ros  |   SYS_AUTOCONFIG: curr: 0 -> new: 1
+px4_sim_ros  |   SYS_AUTOSTART: curr: 0 -> new: 4001
+px4_sim_ros  |   CAL_ACC0_ID: curr: 0 -> new: 1310988
+px4_sim_ros  |   CAL_GYRO0_ID: curr: 0 -> new: 1310988
+px4_sim_ros  |   CAL_ACC1_ID: curr: 0 -> new: 1310996
+px4_sim_ros  |   CAL_GYRO1_ID: curr: 0 -> new: 1310996
+px4_sim_ros  |   CAL_ACC2_ID: curr: 0 -> new: 1311004
+px4_sim_ros  |   CAL_GYRO2_ID: curr: 0 -> new: 1311004
+px4_sim_ros  |   CAL_MAG0_ID: curr: 0 -> new: 197388
+px4_sim_ros  |   CAL_MAG0_PRIO: curr: -1 -> new: 50
+px4_sim_ros  |   CAL_MAG1_ID: curr: 0 -> new: 197644
+px4_sim_ros  |   CAL_MAG1_PRIO: curr: -1 -> new: 50
+px4_sim_ros  |   SENS_BOARD_X_OFF: curr: 0.0000 -> new: 0.0000
+px4_sim_ros  |   SENS_DPRES_OFF: curr: 0.0000 -> new: 0.0010
+px4_sim_ros  | INFO  [dataman] data manager file './dataman' size is 1208528 bytes
+px4_sim_ros  | INFO  [init] Gazebo simulator 8.10.0
+px4_sim_ros  | INFO  [init] Starting gazebo with world: /app/PX4-Autopilot/Tools/simulation/gz/worlds/default.sdf
+px4_sim_ros  | INFO  [init] Starting gz gui
+px4_sim_ros  | INFO  [init] Waiting for Gazebo world...
+px4_sim_ros  | INFO  [init] Gazebo world is ready
+px4_sim_ros  | INFO  [init] Spawning Gazebo model
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="x500_base"]/link[@name="base_link"]/sensor[@name="air_pressure_sensor"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/x500_base/model.sdf:L219]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="x500_base"]/link[@name="base_link"]/sensor[@name="magnetometer_sensor"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/x500_base/model.sdf:L233]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="x500_base"]/link[@name="base_link"]/sensor[@name="imu_sensor"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/x500_base/model.sdf:L259]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | Warning [Utils.cc:132] [/sdf/model[@name="x500_base"]/link[@name="base_link"]/sensor[@name="navsat_sensor"]/gz_frame_id:/app/PX4-Autopilot/Tools/simulation/gz/models/x500_base/model.sdf:L311]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+px4_sim_ros  | INFO  [gz_bridge] world: default, model: x500_0
+px4_sim_ros  | INFO  [lockstep_scheduler] setting initial absolute time to 4144000 us
+px4_sim_ros  | INFO  [commander] LED: open /dev/led0 failed (22)
+px4_sim_ros  | WARN  [health_and_arming_checks] Preflight Fail: ekf2 missing data
+px4_sim_ros  | WARN  [health_and_arming_checks] Preflight Fail: system power unavailable
+px4_sim_ros  | WARN  [health_and_arming_checks] Preflight Fail: No connection to the GCS
+px4_sim_ros  | INFO  [uxrce_dds_client] init UDP agent IP:127.0.0.1, port:8888
+px4_sim_ros  | INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18570 remote port 14550
+px4_sim_ros  | INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540
+px4_sim_ros  | INFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14280 remote port 14030
+px4_sim_ros  | INFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13030 remote port 13280
+px4_sim_ros  | INFO  [tone_alarm] home set
+px4_sim_ros  | INFO  [logger] logger started (mode=all)
+px4_sim_ros  | INFO  [logger] Start file log (type: full)
+px4_sim_ros  | INFO  [logger] [logger] ./log/2025-12-10/18_15_41.ulg
+px4_sim_ros  | INFO  [logger] Opened full log file: ./log/2025-12-10/18_15_41.ulg
+px4_sim_ros  | INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+px4_sim_ros  | INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+px4_sim_ros  | INFO  [px4] Startup script returned successfully
+px4_sim_ros  | pxh> WARN  [health_and_arming_checks] Preflight Fail: No connection to the GCS
+px4_sim_ros  | WARN  [health_and_arming_checks] Preflight Fail: No connection to the GCS
