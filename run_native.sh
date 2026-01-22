@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [ ! -d "$HOME/PX4-Autopilot" ]; then
-    echo " Błąd: Nie znaleziono folderu ~/PX4-Autopilot"
-    echo " Musisz sklonować i zbudować PX4 natywnie (make px4_sitl)"
+    echo " Error: Folder not found ~/PX4-Autopilot"
+    echo " You need to clone and build PX4 natively (make px4_sitl)"
     exit 1
 fi
 
-echo " Uruchamianie natywnej symulacji z folderu PX4-Autopilot..."
+echo "Starting PX4-Autopilot..."
 
 cd ~/PX4-Autopilot
 
