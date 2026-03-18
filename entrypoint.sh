@@ -1,3 +1,3 @@
 #!/bin/bash
 
-make px4_sitl gz_becard
+PX4_GZ_WORLD="forest" make px4_sitl gz_becard
