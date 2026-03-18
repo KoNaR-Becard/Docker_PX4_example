@@ -635,6 +635,7 @@
           </clip>
         </camera>
         <always_on>1</always_on>
+        <topic>camera</topic>
         <update_rate>30</update_rate>
         <visualize>true</visualize>
       </sensor>
