@@ -16,3 +16,10 @@ In second terminal run:
 ```bash
 ./run.sh pilot
 ```
+
+## World selection
+
+By default a standard plain world is used, but avaliable worlds are present in the folder `./worlds`.
+
+To select a world, open `entrypoint.sh` file and then change a world name in 
+`PX4_GZ_WORLD` variable. A world name should not have any file extension.
