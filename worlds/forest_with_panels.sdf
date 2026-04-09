@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <sdf version="1.9">
+<!-- Fire competition instructions -->
+
+<!--
+This world is a standard forest world with addition of three
+panels imitating fotovoltaitc panels. The panels are 2m x 1m and consist 
+of 10 blocks of 20cm x 10cm.
+
+Each panel is preceded by comment `PANEL 1`, `PANEL 2` and `PANEL 3` respectively. 
+So you can use CTRL+F to easily find them in that file.
+
+You can modify position of the panels by changing the `pose` tag of the model.
+First three numbers are x, y and z position of the panel, and the last three are roll, pitch and yaw of the panel.
+So the position in 3D space and rotations respectivly.
+
+To change color of individual blocks, find the block you want to change and modify the `diffuse` tag of the material. 
+The first three numbers are RGB values of the color, and the last number
+-->
   <world name="forest_with_panels">
     <physics type="ode">
       <max_step_size>0.004</max_step_size>
@@ -201,9 +218,3477 @@
       <pose>-3.1997 32.8927 0 0 -0 0</pose>
     </include>
 
+    <!-- PANEL 1 -->
     <!-- 20x10 cm blocks, 2m x 1m -->
     <model name="panel_1">
-      <pose>0 4 0 0 0 0</pose>
+      <pose>3 0 1 0 -1.57 0</pose>
+      <static>true</static>
+      <link name="panel_outline">
+        <visual name="panel_outline_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1.0 2.0 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1.0 1.0 1.0 1</ambient>
+            <diffuse>1.0 1.0 1.0 1</diffuse>
+            <specular>1.0 1.0 1.0 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+      
+      <link name="block_1_1">
+        <visual name="block_1_1_visual">
+          <pose>0.45 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>1.0 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_1">
+        <visual name="block_2_1_visual">
+          <pose>0.35 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_1">
+        <visual name="block_3_1_visual">
+          <pose>0.25 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_1">
+        <visual name="block_4_1_visual">
+          <pose>0.15 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_1">
+        <visual name="block_5_1_visual">
+          <pose>0.05 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_1">
+        <visual name="block_6_1_visual">
+          <pose>-0.05 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_1">
+        <visual name="block_7_1_visual">
+          <pose>-0.15 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_1">
+        <visual name="block_8_1_visual">
+          <pose>-0.25 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_1">
+        <visual name="block_9_1_visual">
+          <pose>-0.35 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_1">
+        <visual name="block_10_1_visual">
+          <pose>-0.45 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_2">
+        <visual name="block_1_2_visual">
+          <pose>0.45 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_2">
+        <visual name="block_2_2_visual">
+          <pose>0.35 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_2">
+        <visual name="block_3_2_visual">
+          <pose>0.25 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_2">
+        <visual name="block_4_2_visual">
+          <pose>0.15 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_2">
+        <visual name="block_5_2_visual">
+          <pose>0.05 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_2">
+        <visual name="block_6_2_visual">
+          <pose>-0.05 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_2">
+        <visual name="block_7_2_visual">
+          <pose>-0.15 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_2">
+        <visual name="block_8_2_visual">
+          <pose>-0.25 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_2">
+        <visual name="block_9_2_visual">
+          <pose>-0.35 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_2">
+        <visual name="block_10_2_visual">
+          <pose>-0.45 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_3">
+        <visual name="block_1_3_visual">
+          <pose>0.45 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_3">
+        <visual name="block_2_3_visual">
+          <pose>0.35 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_3">
+        <visual name="block_3_3_visual">
+          <pose>0.25 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_3">
+        <visual name="block_4_3_visual">
+          <pose>0.15 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_3">
+        <visual name="block_5_3_visual">
+          <pose>0.05 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_3">
+        <visual name="block_6_3_visual">
+          <pose>-0.05 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_3">
+        <visual name="block_7_3_visual">
+          <pose>-0.15 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_3">
+        <visual name="block_8_3_visual">
+          <pose>-0.25 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_3">
+        <visual name="block_9_3_visual">
+          <pose>-0.35 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_3">
+        <visual name="block_10_3_visual">
+          <pose>-0.45 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_4">
+        <visual name="block_1_4_visual">
+          <pose>0.45 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_4">
+        <visual name="block_2_4_visual">
+          <pose>0.35 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_4">
+        <visual name="block_3_4_visual">
+          <pose>0.25 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_4">
+        <visual name="block_4_4_visual">
+          <pose>0.15 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_4">
+        <visual name="block_5_4_visual">
+          <pose>0.05 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_4">
+        <visual name="block_6_4_visual">
+          <pose>-0.05 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_4">
+        <visual name="block_7_4_visual">
+          <pose>-0.15 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_4">
+        <visual name="block_8_4_visual">
+          <pose>-0.25 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_4">
+        <visual name="block_9_4_visual">
+          <pose>-0.35 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_4">
+        <visual name="block_10_2_visual">
+          <pose>-0.45 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_5">
+        <visual name="block_1_5_visual">
+          <pose>0.45 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_5">
+        <visual name="block_2_5_visual">
+          <pose>0.35 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_5">
+        <visual name="block_3_5_visual">
+          <pose>0.25 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_5">
+        <visual name="block_4_5_visual">
+          <pose>0.15 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_5">
+        <visual name="block_5_5_visual">
+          <pose>0.05 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_5">
+        <visual name="block_6_5_visual">
+          <pose>-0.05 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_5">
+        <visual name="block_7_5_visual">
+          <pose>-0.15 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_5">
+        <visual name="block_8_5_visual">
+          <pose>-0.25 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_5">
+        <visual name="block_9_5_visual">
+          <pose>-0.35 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_5">
+        <visual name="block_10_5_visual">
+          <pose>-0.45 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_6">
+        <visual name="block_1_6_visual">
+          <pose>0.45 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_6">
+        <visual name="block_2_6_visual">
+          <pose>0.35 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_6">
+        <visual name="block_3_6_visual">
+          <pose>0.25 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_6">
+        <visual name="block_4_6_visual">
+          <pose>0.15 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_6">
+        <visual name="block_5_6_visual">
+          <pose>0.05 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_6">
+        <visual name="block_6_6_visual">
+          <pose>-0.05 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_6">
+        <visual name="block_7_6_visual">
+          <pose>-0.15 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_6">
+        <visual name="block_8_2_visual">
+          <pose>-0.25 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_6">
+        <visual name="block_9_2_visual">
+          <pose>-0.35 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_6">
+        <visual name="block_10_6_visual">
+          <pose>-0.45 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_7">
+        <visual name="block_1_7_visual">
+          <pose>0.45 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_7">
+        <visual name="block_2_7_visual">
+          <pose>0.35 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_7">
+        <visual name="block_3_7_visual">
+          <pose>0.25 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_7">
+        <visual name="block_4_7_visual">
+          <pose>0.15 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_7">
+        <visual name="block_5_7_visual">
+          <pose>0.05 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_7">
+        <visual name="block_6_7_visual">
+          <pose>-0.05 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_7">
+        <visual name="block_7_7_visual">
+          <pose>-0.15 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_7">
+        <visual name="block_8_7_visual">
+          <pose>-0.25 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_7">
+        <visual name="block_9_7_visual">
+          <pose>-0.35 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_7">
+        <visual name="block_10_7_visual">
+          <pose>-0.45 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_8">
+        <visual name="block_1_8_visual">
+          <pose>0.45 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_8">
+        <visual name="block_2_8_visual">
+          <pose>0.35 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_8">
+        <visual name="block_3_8_visual">
+          <pose>0.25 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_8">
+        <visual name="block_4_8_visual">
+          <pose>0.15 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_8">
+        <visual name="block_5_8_visual">
+          <pose>0.05 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_8">
+        <visual name="block_6_8_visual">
+          <pose>-0.05 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_8">
+        <visual name="block_7_8_visual">
+          <pose>-0.15 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_8">
+        <visual name="block_8_8_visual">
+          <pose>-0.25 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_8">
+        <visual name="block_9_8_visual">
+          <pose>-0.35 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_8">
+        <visual name="block_10_8_visual">
+          <pose>-0.45 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_9">
+        <visual name="block_1_9_visual">
+          <pose>0.45 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_9">
+        <visual name="block_2_9_visual">
+          <pose>0.35 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_9">
+        <visual name="block_3_9_visual">
+          <pose>0.25 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_9">
+        <visual name="block_4_9_visual">
+          <pose>0.15 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_9">
+        <visual name="block_5_9_visual">
+          <pose>0.05 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_9">
+        <visual name="block_6_9_visual">
+          <pose>-0.05 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_9">
+        <visual name="block_7_9_visual">
+          <pose>-0.15 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 1</ambient>
+            <diffuse>0.1 1.0 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_9">
+        <visual name="block_8_9_visual">
+          <pose>-0.25 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_9">
+        <visual name="block_9_9_visual">
+          <pose>-0.35 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_9">
+        <visual name="block_10_9_visual">
+          <pose>-0.45 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_1_10">
+        <visual name="block_1_10_visual">
+          <pose>0.45 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_10">
+        <visual name="block_2_10_visual">
+          <pose>0.35 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_10">
+        <visual name="block_3_10_visual">
+          <pose>0.25 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_10">
+        <visual name="block_4_10_visual">
+          <pose>0.15 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_10">
+        <visual name="block_5_10_visual">
+          <pose>0.05 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_10">
+        <visual name="block_6_10_visual">
+          <pose>-0.05 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_10">
+        <visual name="block_7_10_visual">
+          <pose>-0.15 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_10">
+        <visual name="block_8_10_visual">
+          <pose>-0.25 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_10">
+        <visual name="block_9_10_visual">
+          <pose>-0.35 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_10">
+        <visual name="block_10_10_visual">
+          <pose>-0.45 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+    </model>
+
+
+    <!-- PANEL 2 -->
+    <!-- 20x10 cm blocks, 2m x 1m -->
+    <model name="panel_2">
+      <pose>-3 3 1 -0.57 -1.57 3.14</pose>
+      <static>true</static>
+      <link name="panel_outline">
+        <visual name="panel_outline_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1.0 2.0 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1.0 1.0 1.0 1</ambient>
+            <diffuse>1.0 1.0 1.0 1</diffuse>
+            <specular>1.0 1.0 1.0 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+      
+      <link name="block_1_1">
+        <visual name="block_1_1_visual">
+          <pose>0.45 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_1">
+        <visual name="block_2_1_visual">
+          <pose>0.35 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_1">
+        <visual name="block_3_1_visual">
+          <pose>0.25 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_1">
+        <visual name="block_4_1_visual">
+          <pose>0.15 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_1">
+        <visual name="block_5_1_visual">
+          <pose>0.05 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_1">
+        <visual name="block_6_1_visual">
+          <pose>-0.05 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_1">
+        <visual name="block_7_1_visual">
+          <pose>-0.15 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_1">
+        <visual name="block_8_1_visual">
+          <pose>-0.25 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_1">
+        <visual name="block_9_1_visual">
+          <pose>-0.35 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_1">
+        <visual name="block_10_1_visual">
+          <pose>-0.45 0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_2">
+        <visual name="block_1_2_visual">
+          <pose>0.45 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_2">
+        <visual name="block_2_2_visual">
+          <pose>0.35 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_2">
+        <visual name="block_3_2_visual">
+          <pose>0.25 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_2">
+        <visual name="block_4_2_visual">
+          <pose>0.15 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_2">
+        <visual name="block_5_2_visual">
+          <pose>0.05 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_2">
+        <visual name="block_6_2_visual">
+          <pose>-0.05 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_2">
+        <visual name="block_7_2_visual">
+          <pose>-0.15 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_2">
+        <visual name="block_8_2_visual">
+          <pose>-0.25 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_2">
+        <visual name="block_9_2_visual">
+          <pose>-0.35 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_2">
+        <visual name="block_10_2_visual">
+          <pose>-0.45 0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_3">
+        <visual name="block_1_3_visual">
+          <pose>0.45 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_3">
+        <visual name="block_2_3_visual">
+          <pose>0.35 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_3">
+        <visual name="block_3_3_visual">
+          <pose>0.25 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_3">
+        <visual name="block_4_3_visual">
+          <pose>0.15 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_3">
+        <visual name="block_5_3_visual">
+          <pose>0.05 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_3">
+        <visual name="block_6_3_visual">
+          <pose>-0.05 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_3">
+        <visual name="block_7_3_visual">
+          <pose>-0.15 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_3">
+        <visual name="block_8_3_visual">
+          <pose>-0.25 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_3">
+        <visual name="block_9_3_visual">
+          <pose>-0.35 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_3">
+        <visual name="block_10_3_visual">
+          <pose>-0.45 0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_4">
+        <visual name="block_1_4_visual">
+          <pose>0.45 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_4">
+        <visual name="block_2_4_visual">
+          <pose>0.35 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_4">
+        <visual name="block_3_4_visual">
+          <pose>0.25 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_4">
+        <visual name="block_4_4_visual">
+          <pose>0.15 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_4">
+        <visual name="block_5_4_visual">
+          <pose>0.05 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_4">
+        <visual name="block_6_4_visual">
+          <pose>-0.05 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_4">
+        <visual name="block_7_4_visual">
+          <pose>-0.15 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_4">
+        <visual name="block_8_4_visual">
+          <pose>-0.25 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_4">
+        <visual name="block_9_4_visual">
+          <pose>-0.35 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_4">
+        <visual name="block_10_2_visual">
+          <pose>-0.45 0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_5">
+        <visual name="block_1_5_visual">
+          <pose>0.45 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_5">
+        <visual name="block_2_5_visual">
+          <pose>0.35 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_5">
+        <visual name="block_3_5_visual">
+          <pose>0.25 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_5">
+        <visual name="block_4_5_visual">
+          <pose>0.15 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_5">
+        <visual name="block_5_5_visual">
+          <pose>0.05 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_5">
+        <visual name="block_6_5_visual">
+          <pose>-0.05 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_5">
+        <visual name="block_7_5_visual">
+          <pose>-0.15 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_5">
+        <visual name="block_8_5_visual">
+          <pose>-0.25 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_5">
+        <visual name="block_9_5_visual">
+          <pose>-0.35 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_5">
+        <visual name="block_10_5_visual">
+          <pose>-0.45 0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_6">
+        <visual name="block_1_6_visual">
+          <pose>0.45 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_6">
+        <visual name="block_2_6_visual">
+          <pose>0.35 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_6">
+        <visual name="block_3_6_visual">
+          <pose>0.25 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_6">
+        <visual name="block_4_6_visual">
+          <pose>0.15 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_6">
+        <visual name="block_5_6_visual">
+          <pose>0.05 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_6">
+        <visual name="block_6_6_visual">
+          <pose>-0.05 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_6">
+        <visual name="block_7_6_visual">
+          <pose>-0.15 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_6">
+        <visual name="block_8_2_visual">
+          <pose>-0.25 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_6">
+        <visual name="block_9_2_visual">
+          <pose>-0.35 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_6">
+        <visual name="block_10_6_visual">
+          <pose>-0.45 -0.1 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_7">
+        <visual name="block_1_7_visual">
+          <pose>0.45 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_7">
+        <visual name="block_2_7_visual">
+          <pose>0.35 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_7">
+        <visual name="block_3_7_visual">
+          <pose>0.25 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_7">
+        <visual name="block_4_7_visual">
+          <pose>0.15 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_7">
+        <visual name="block_5_7_visual">
+          <pose>0.05 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_7">
+        <visual name="block_6_7_visual">
+          <pose>-0.05 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_7">
+        <visual name="block_7_7_visual">
+          <pose>-0.15 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_7">
+        <visual name="block_8_7_visual">
+          <pose>-0.25 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_7">
+        <visual name="block_9_7_visual">
+          <pose>-0.35 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_7">
+        <visual name="block_10_7_visual">
+          <pose>-0.45 -0.3 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_8">
+        <visual name="block_1_8_visual">
+          <pose>0.45 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_8">
+        <visual name="block_2_8_visual">
+          <pose>0.35 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_8">
+        <visual name="block_3_8_visual">
+          <pose>0.25 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_8">
+        <visual name="block_4_8_visual">
+          <pose>0.15 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_8">
+        <visual name="block_5_8_visual">
+          <pose>0.05 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_8">
+        <visual name="block_6_8_visual">
+          <pose>-0.05 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_8">
+        <visual name="block_7_8_visual">
+          <pose>-0.15 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_8">
+        <visual name="block_8_8_visual">
+          <pose>-0.25 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_8">
+        <visual name="block_9_8_visual">
+          <pose>-0.35 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_8">
+        <visual name="block_10_8_visual">
+          <pose>-0.45 -0.5 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+      <link name="block_1_9">
+        <visual name="block_1_9_visual">
+          <pose>0.45 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_9">
+        <visual name="block_2_9_visual">
+          <pose>0.35 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_9">
+        <visual name="block_3_9_visual">
+          <pose>0.25 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_9">
+        <visual name="block_4_9_visual">
+          <pose>0.15 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_9">
+        <visual name="block_5_9_visual">
+          <pose>0.05 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_9">
+        <visual name="block_6_9_visual">
+          <pose>-0.05 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_9">
+        <visual name="block_7_9_visual">
+          <pose>-0.15 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 1</ambient>
+            <diffuse>0.1 1.0 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_9">
+        <visual name="block_8_9_visual">
+          <pose>-0.25 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_9">
+        <visual name="block_9_9_visual">
+          <pose>-0.35 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_9">
+        <visual name="block_10_9_visual">
+          <pose>-0.45 -0.7 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_1_10">
+        <visual name="block_1_10_visual">
+          <pose>0.45 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_2_10">
+        <visual name="block_2_10_visual">
+          <pose>0.35 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_3_10">
+        <visual name="block_3_10_visual">
+          <pose>0.25 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+    <link name="block_4_10">
+        <visual name="block_4_10_visual">
+          <pose>0.15 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+    
+    <link name="block_5_10">
+        <visual name="block_5_10_visual">
+          <pose>0.05 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_6_10">
+        <visual name="block_6_10_visual">
+          <pose>-0.05 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_7_10">
+        <visual name="block_7_10_visual">
+          <pose>-0.15 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+      <link name="block_8_10">
+        <visual name="block_8_10_visual">
+          <pose>-0.25 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_9_10">
+        <visual name="block_9_10_visual">
+          <pose>-0.35 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+       <link name="block_10_10">
+        <visual name="block_10_10_visual">
+          <pose>-0.45 -0.9 0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.09 0.18 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+      </link>
+
+
+    </model>
+
+    <!-- PANEL 3 -->
+    <!-- 20x10 cm blocks, 2m x 1m -->
+    <model name="panel_3">
+      <pose>-3 -3 1 -2.75 -1.57 0</pose>
       <static>true</static>
       <link name="panel_outline">
         <visual name="panel_outline_visual">
