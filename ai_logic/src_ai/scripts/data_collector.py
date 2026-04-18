@@ -4,7 +4,7 @@ from datetime import datetime
 
 SAVE_DIR = "../datasets/solar_panels/train/clean" 
 
-CAMERA_INDEX = 36 
+CAMERA_INDEX = 0
 
 def main():
     os.makedirs(SAVE_DIR, exist_ok=True)
