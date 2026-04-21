@@ -1,7 +1,7 @@
 import cv2
 from ultralytics import YOLO
 
-MODEL_PATH = "/home/marcin-g-rniak/Docker_PX4_example/runs/obb/train2/weights/best.pt"
+MODEL_PATH = "/home/marcin-g-rniak/Docker_PX4_example/runs/obb/train2/weights/best.pt" # dopasować ścieżkę do swojej
 
 def main():
     print(f"Ładowanie wyuczonego modelu z: {MODEL_PATH}")
