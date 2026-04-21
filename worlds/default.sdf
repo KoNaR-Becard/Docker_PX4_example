@@ -102,5 +102,9 @@
       <longitude_deg> 8.546163739800146</longitude_deg>
       <elevation>0</elevation>
     </spherical_coordinates>
+    <include>
+      <uri>model://forest_with_panels</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
   </world>
 </sdf>
