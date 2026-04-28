@@ -1,83 +1,114 @@
+import os
 import cv2
 import time
+import rclpy
+from rclpy.node import Node
 from ultralytics import YOLO
 
-MODEL_PATH = "/home/marcin-g-rniak/Docker_PX4_example/runs/obb/train2/weights/best.pt" # dopasować ścieżkę do swojej
-CAMERA_PORT = 37
+class PanelDetectionNode(Node):
+    def __init__(self):
+        super().__init__('panel_detection_node')
+        
+        self.declare_parameter('model_path', '/app/models/best.pt')
+        self.model_path = self.get_parameter('model_path').get_parameter_value().string_value
+        
+        self.camera_port = 37
+        
+        print(f"Loading trained model from: {self.model_path}")
+        if not os.path.exists(self.model_path):
+            print(f"Error! Model file does not exist at: {self.model_path}")
+            raise SystemExit
 
-def send_to_pixhawk(see_panel, x=0.0, y=0.0, obrot=0.0, status="SZUKAM"):
-    #print(f"Wysyłam -> Panel: {see_panel} | X:{x:.1f} Y:{y:.1f} Angle:{obrot:.2f} | Status:{status}")
-    pass
+        try:
+            self.model = YOLO(self.model_path)
+        except Exception as e:
+            print(f"Error! Failed to load model. Details: {e}")
+            raise SystemExit
 
-def collect_command_from_pixhawk(buttom):
-    if buttom == ord('p'):
-        return "Zrobione"
-    return "Brak"
+        self.cap = cv2.VideoCapture(self.camera_port, cv2.CAP_V4L2)
+        
+        if not self.cap.isOpened():
+            print("Error: Cannot open camera.")
+            raise SystemExit
 
-def main():
-    print(f"Ładowanie wyuczonego modelu z: {MODEL_PATH}")
-    try:
-        model = YOLO(MODEL_PATH)
-    except Exception as e:
-        print(f"Błąd! Nie znaleziono modelu. Sprawdź ścieżkę. Szczegóły: {e}")
-        return
+        print("Camera started!")
+        print("Show the panel to the camera and rotate it. Press 'Q' to quit.")
 
-    cap = cv2.VideoCapture(CAMERA_PORT, cv2.CAP_V4L2)
-    
-    if not cap.isOpened():
-        print("Błąd: Nie można otworzyć kamery w laptopie.")
-        return
+        self.last_save_time = 0.0
+        self.timer = self.create_timer(0.033, self.timer_callback)
 
-    print("Kamera uruchomiona!")
-    print("Pokaż puszkę do kamery i obracaj nią. Wciśnij 'Q', aby wyjść.")
+    def send_to_pixhawk(self, see_panel, x=0.0, y=0.0, obrot=0.0, status="SEARCHING"):
+        pass
 
-    while True:
-        ret, frame = cap.read()
+    def collect_command_from_pixhawk(self, button):
+        if button == ord('p'):
+            return "DONE"
+        return "NONE"
+
+    def timer_callback(self):
+        ret, frame = self.cap.read()
         if not ret:
-            print("Błąd pobierania klatki.")
-            break
+            print("Error capturing frame.")
+            rclpy.shutdown()
+            return
 
-        results = model.predict(frame, conf=0.5, verbose=False)
-        buttom = cv2.waitKey(1) & 0xFF
+        results = self.model.predict(frame, conf=0.5, verbose=False)
+        button = cv2.waitKey(1) & 0xFF
 
         if results[0].obb is not None and len(results[0].obb) > 0:
-            print("Wykryto panel")
+            print("Panel detected")
             
             data = results[0].obb.xywhr[0] 
-            x_center= float(data[0])
+            x_center = float(data[0])
             y_center = float(data[1])
             width = float(data[2])
             height = float(data[3])
             rotation_angle = float(data[4])
 
-            send_to_pixhawk(see_panel=True, x=x_center, y=y_center, obrot=rotation_angle)
+            self.send_to_pixhawk(True, x_center, y_center, rotation_angle)
 
-            command = collect_command_from_pixhawk(buttom)
+            command = self.collect_command_from_pixhawk(button)
             
-            if command == "Zrobione":
-                file_name = f"panel_analiza_{int(time.time())}.jpg"
+            if command == "DONE" and (time.time() - self.last_save_time) > 1.0:
+                file_name = f"panel_analysis_{int(time.time())}.jpg"
                 
                 cv2.imwrite(file_name, frame)
-                print(f"Zdjęcie zapisane jako: {file_name}")
+                print(f"Image saved as: {file_name}")
                 
-                send_to_pixhawk(see_panel=True, status="Zrobione")
-                
-                time.sleep(1) 
+                self.send_to_pixhawk(True, status="DONE")
+                self.last_save_time = time.time()
 
         else:
-            send_to_pixhawk(see_panel=False, status="Clean")
+            self.send_to_pixhawk(False, status="CLEAN")
 
         annotated_frame = results[0].plot()
         if results[0].obb is not None and len(results[0].obb) > 0:
              cv2.drawMarker(annotated_frame, (int(x_center), int(y_center)), (0, 0, 255), 
                             markerType=cv2.MARKER_CROSS, markerSize=20, thickness=2)
-        cv2.imshow("Wykrywanie Puszki na Zywo (OBB)", annotated_frame)
+        cv2.imshow("Live Panel Detection (OBB)", annotated_frame)
 
-        if buttom == ord('q'):
-            break
+        if button == ord('q'):
+            rclpy.shutdown()
 
-    cap.release()
-    cv2.destroyAllWindows()
+    def destroy_node(self):
+        self.cap.release()
+        cv2.destroyAllWindows()
+        super().destroy_node()
+
+def main(args=None):
+    rclpy.init(args=args)
+    try:
+        node = PanelDetectionNode()
+        rclpy.spin(node)
+    except SystemExit:
+        pass
+    except KeyboardInterrupt:
+        pass
+    finally:
+        if 'node' in locals():
+            node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 if __name__ == "__main__":
     main()

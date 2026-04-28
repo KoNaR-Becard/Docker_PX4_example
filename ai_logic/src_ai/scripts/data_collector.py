@@ -1,54 +1,71 @@
-import cv2
 import os
+import cv2
 from datetime import datetime
+import rclpy
+from rclpy.node import Node
 
-SAVE_DIR = "../datasets/solar_panels/train/clean" 
+class CameraSaverNode(Node):
+    """
+    ROS 2 Node for capturing and saving camera frames.
+    """
+    def __init__(self):
+        super().__init__('camera_saver_node')
+        
+        self.save_dir = os.path.abspath("../datasets/solar_panels/train/clean")
+        os.makedirs(self.save_dir, exist_ok=True)
+        
+        self.camera_index = 37
+        self.cap = cv2.VideoCapture(self.camera_index, cv2.CAP_V4L2)
+        self.count = 0
+        
+        if not self.cap.isOpened():
+            self.get_logger().error(f"Failed to open camera with index {self.camera_index}")
+            return
+            
+        print(f"Save directory: {self.save_dir}")
+        print("Controls:\n [S] - Save image\n [Q] - Quit")
+        
+        self.timer = self.create_timer(0.033, self.timer_callback)
 
-CAMERA_INDEX = 37
-
-def main():
-    os.makedirs(SAVE_DIR, exist_ok=True)
-    
-    absolute_save_dir = os.path.abspath(SAVE_DIR)
-    print(f"Katalog zapisu: {absolute_save_dir}")
-
-    cap = cv2.VideoCapture(CAMERA_INDEX, cv2.CAP_V4L2)
-    
-    if not cap.isOpened():
-        print(f"Błąd: Nie można nawiązać połączenia z kamerą pod indeksem {CAMERA_INDEX}.")
-        return
-
-    print("Sterowanie:")
-    print(" [S] - Zapisz zdjęcie (trafi do train/clean)")
-    print(" [Q] - Wyjdź z programu")
-
-    count = 0
-    
-    while True:
-        ret, frame = cap.read()
+    def timer_callback(self):
+        ret, frame = self.cap.read()
         if not ret:
-            print("Błąd: Nie można pobrać klatki. Zamykam strumień...")
-            break
+            return
 
-        cv2.imshow("Zbieranie danych - Czyste panele", frame)
-
+        cv2.imshow("Data Collection - Clean Panels", frame)
         key = cv2.waitKey(1) & 0xFF
 
-        if key == ord('s') or key == ord('S'):
+        if key in [ord('s'), ord('S')]:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"clean_panel_{timestamp}_{count}.jpg"
-            filepath = os.path.join(absolute_save_dir, filename)
+            filename = f"clean_panel_{timestamp}_{self.count}.jpg"
+            filepath = os.path.join(self.save_dir, filename)
             
             cv2.imwrite(filepath, frame)
-            print(f"-> Zapisano: {filename}")
-            count += 1
-        
-        elif key == ord('q') or key == ord('Q'):
-            print("Zamykanie programu...")
-            break
+            print(f"-> Saved: {filename}")
+            self.count += 1
+          
+        elif key in [ord('q'), ord('Q')]:
+            print("Shutting down...")
+            rclpy.shutdown()
 
-    cap.release()
-    cv2.destroyAllWindows()
+    def destroy_node(self):
+        self.cap.release()
+        cv2.destroyAllWindows()
+        super().destroy_node()
 
-if __name__ == "__main__":
+def main(args=None):
+    rclpy.init(args=args)
+    
+    node = CameraSaverNode()
+    
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
+
+if __name__ == '__main__':
     main()
