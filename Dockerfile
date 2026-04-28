@@ -4,6 +4,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | gpg --dearmor --batch --yes -o /usr/share/keyrings/ros-archive-keyring.gpg
 
+RUN wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | gpg --dearmor --output /usr/share/keyrings/intel-graphics.gpg
+RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy/lts/2350 unified" | tee /etc/apt/sources.list.d/intel-gpu-jammy.list
+RUN apt update
+RUN apt install -y intel-opencl-icd intel-level-zero-gpu level-zero libigc1 intel-igc-cm libigdfcl1 libigdgmm12
+
 # Add the ROS 2 repository for humble (Ubuntu 22.04 is "Jammy")
 RUN echo "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu jammy main" > /etc/apt/sources.list.d/ros2.list
 
