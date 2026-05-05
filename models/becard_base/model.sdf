@@ -75,11 +75,6 @@
         <material>
           <diffuse>1.0 1.0 1.0</diffuse>
           <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://becard_base/materials/textures/nxp.png</albedo_map>
-            </metal>
-          </pbr>
         </material>
       </visual>
       <visual name="NXP_FMUK66_TOP">
@@ -94,11 +89,6 @@
         <material>
           <diffuse>1.0 1.0 1.0</diffuse>
           <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://becard_base/materials/textures/nxp.png</albedo_map>
-            </metal>
-          </pbr>
         </material>
       </visual>
       <visual name="RDDRONE_FMUK66_TOP">
@@ -113,11 +103,6 @@
         <material>
           <diffuse>1.0 1.0 1.0</diffuse>
           <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://becard_base/materials/textures/rd.png</albedo_map>
-            </metal>
-          </pbr>
         </material>
       </visual>
       <collision name="base_link_collision_0">
