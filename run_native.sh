@@ -10,11 +10,13 @@ echo "Starting PX4-Autopilot..."
 
 cd ~/PX4-Autopilot
 
-pkill -9 px4
-pkill -9 gz
-pkill -9 ruby
+pkill -9 -f px4
+pkill -9 -f gz
+pkill -9 -f ruby
+pkill -9 -f ign
 
-export GZ_SIM_RESOURCE_PATH=$HOME/Docker_PX4_example/models:$HOME/Docker_PX4_example/worlds:$HOME/PX4-Autopilot/Tools/simulation/gz/models:$HOME/PX4-Autopilot/Tools/simulation/gz/worlds
-export PX4_GZ_WORLD=$HOME/Docker_PX4_example/worlds/forest_with_panels.sdf
+export GZ_SIM_RESOURCE_PATH=$HOME/PX4-Autopilot/Tools/simulation/gz/models:$HOME/PX4-Autopilot/Tools/simulation/gz/worlds
+
+export PX4_GZ_WORLD=default
 
 PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL=x500 ./build/px4_sitl_default/bin/px4
