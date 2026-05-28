@@ -1,0 +1,43 @@
+services:
+  px4_sim:
+    container_name: px4_sim_ros
+    network_mode: host
+
+    image: ghcr.io/konar-becard/docker_px4_example:master
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    tty: true
+    stop_signal: SIGINT
+
+    env_file:
+      - env
+
+    environment:
+      - ROS_DOMAIN_ID=0
+      - DISPLAY=${DISPLAY}
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+      - XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+      - PULSE_SERVER=/mnt/wslg/PulseServer
+      - LD_LIBRARY_PATH=/usr/lib/wsl/lib:${LD_LIBRARY_PATH}
+
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=graphics,compute,utility,display
+
+      - __GLX_VENDOR_LIBRARY_NAME=nvidia
+      - MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
+
+    volumes:
+      - ./entrypoint.sh:/entrypoint.sh
+      - /tmp/.X11-unix/:/tmp/.X11-unix/
+      - /mnt/wslg:/mnt/wslg
+      - /usr/lib/wsl:/usr/lib/wsl
+      - ./worlds:/app/PX4-Autopilot/Tools/simulation/gz/worlds
+      - ./models:/app/PX4-Autopilot/Tools/simulation/gz/models
+
+    gpus: all
+
+    group_add:
+      - video
+      - dialout
