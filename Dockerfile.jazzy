@@ -1,0 +1,63 @@
+FROM ros:jazzy-ros-base
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV SHELL=/bin/bash
+
+# Python environment overrides for Ubuntu 24.04
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
+ENV PIP_IGNORE_INSTALLED=1
+
+# Universal GPU Drivers (NVIDIA, Intel Arc, AMD)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libglvnd0 \
+    libgl1 \
+    libglx0 \
+    libegl1 \
+    libgles2 \
+    mesa-utils \
+    mesa-va-drivers \
+    mesa-vulkan-drivers \
+    libvulkan1 \
+    vulkan-tools \
+    vainfo \
+    udev \
+    git \
+    curl \
+    wget \
+    build-essential \
+    cmake \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# NVIDIA Container Runtime Flags
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute,display
+ENV QT_X11_NO_MITSHM=1
+
+WORKDIR /app
+
+# MicroXRCEAgent Setup
+RUN git clone -b v2.4.3 https://github.com/eProsima/Micro-XRCE-DDS-Agent.git /app/Micro-XRCE-DDS-Agent \
+    && cd /app/Micro-XRCE-DDS-Agent \
+    && mkdir build && cd build \
+    && cmake .. \
+    && make -j$(nproc) \
+    && make install \
+    && ldconfig
+
+# PX4 Autopilot Setup
+RUN git clone --recurse-submodules https://github.com/KoNaR-Becard/PX4-Autopilot.git /app/PX4-Autopilot \
+    && bash /app/PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx \
+    && rm -rf /var/lib/apt/lists/*
+
+# Build PX4 SITL (Precompilation)
+WORKDIR /app/PX4-Autopilot
+RUN make px4_sitl
+
+# Workspace Setup
+WORKDIR /app
+COPY entrypoint.jazzy.sh /entrypoint.jazzy.sh
+RUN chmod +x /entrypoint.jazzy.sh
+
+ENTRYPOINT ["/entrypoint.jazzy.sh"]
+CMD ["make", "px4_sitl", "gz_becard"]

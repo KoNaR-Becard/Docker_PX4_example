@@ -1,44 +1,34 @@
 #!/bin/bash
+set -e
 
-# Clear the terminal
-clear
+# Grant Docker access to the local X11 display server
+xhost +local:docker > /dev/null 2>&1
 
-# GPU Detection and Compose File Selection
-if grep -qi microsoft /proc/version; then
-    # WSL Environment
-    if ls /dev/dxg >/dev/null 2>&1; then
-        echo "WSL GPU detected."
-        # Prefer compose_nvidia_wsl.yaml if available, fallback to compose_nvidia.yaml
-        if [ -f "compose_nvidia_wsl.yaml" ]; then
-            COMPOSE_FILE=compose_nvidia_wsl.yaml
-        else
-            COMPOSE_FILE=compose_nvidia.yaml
-        fi
-    else
-        echo "No WSL GPU detected."
-        COMPOSE_FILE=compose_amd.yaml
-    fi
+COMPOSE_FILE="compose.jazzy.yaml"
+PROFILE_ARG=""
+
+# GPU detection and profile selection
+if command -v nvidia-smi > /dev/null 2>&1 && nvidia-smi > /dev/null 2>&1; then
+    echo "[INFO] Dedicated NVIDIA GPU / Jetson detected. Launching with NVIDIA hardware profile..."
+    PROFILE_ARG="--profile nvidia"
+    SERVICE_TARGET="px4_sim_nvidia"
 else
-    # Native Linux Environment
-    if lshw -C display 2>/dev/null | grep -i "vendor" | grep -qi "nvidia" || command -v nvidia-smi > /dev/null; then
-        echo "NVIDIA GPU detected."
-        COMPOSE_FILE=compose_nvidia.yaml
-    else
-        echo "NVIDIA GPU not detected (falling back to AMD/Intel config)."
-        COMPOSE_FILE=compose_amd.yaml
-    fi
+    echo "[INFO] Integrated/Universal GPU detected (Intel Arc / Lunar Lake / AMD). Launching via Mesa..."
+    SERVICE_TARGET="px4_sim"
 fi
 
-echo "Using compose file: $COMPOSE_FILE"
-
-# Grant Docker access to the X server
-xhost local:docker > /dev/null 2>&1
-
-# Execute the requested command
-if [[ $1 == "pilot" ]]; then
-    docker compose -f "$COMPOSE_FILE" exec px4_sim MicroXRCEAgent udp4 -p 8888
-elif [[ $1 == "build" ]]; then
-    docker compose -f "$COMPOSE_FILE" build
-else
-    docker compose -f "$COMPOSE_FILE" up
-fi
+case "$1" in
+    build)
+        docker compose -f "$COMPOSE_FILE" $PROFILE_ARG build
+        ;;
+    down)
+        docker compose -f "$COMPOSE_FILE" $PROFILE_ARG down
+        ;;
+    bash)
+        docker exec -it px4_sim_jazzy bash
+        ;;
+    *)
+        echo "[INFO] Starting PX4 SITL + Gazebo Harmonic and MicroXRCEAgent..."
+        docker compose -f "$COMPOSE_FILE" $PROFILE_ARG up $SERVICE_TARGET
+        ;;
+esac
