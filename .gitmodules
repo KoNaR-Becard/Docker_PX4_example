@@ -1,0 +1,3 @@
+[submodule "General_ROS_2_Docker"]
+	path = General_ROS_2_Docker
+	url = https://github.com/KoNaR-Becard/General_ROS_2_Docker.git
